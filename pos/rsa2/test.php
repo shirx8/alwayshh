@@ -1,0 +1,12 @@
+<?php
+
+
+$key = '-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAtoYOdrNWOQVgkFYykb6a4mLRT5zqjJt3XbWI9Kn8ZyOsN4OdfJVIrSHkI09HKgIdXNYxgcwcKKDkv45t76VmSppQbpxK0IPXrogLQFkbHAWa2ZFOjLwZuk6lnF0mJ1Q9CDQ+67SV7jTdQQcSyFl9oupGKWzksIKB5LWG/SRwQUYLmKXVuTrBEPPS3VWxufn4FuoNYny8VCf54G9uE+cZBCFP5pRdv7bEU2tlZkVJ7ZLmUx5dXb4Jxy281gHfU/opr7JuOja12mWugPSRi7bWTFQ7nlGIuu01FJOJLFkbzG/N1i5jw7vXYQfgDa4mA1TFTpYKn1gXgA/ClvR/hyfSCwIDAQABAoIBAGqs+QEZGXikEubo6g9SZjWP6aNtI4xgRKhpNA1C2DjzmXCspLuuiFZf63VTnVUI/V5H9ZFV2NNKDceDF++rLJjHjeDHydYKaGEiM+k86uI6yGEGUvFf8m14D8TOkEEGM9F6r5eU6Nfa38Fkv+6Gly5DXBRUB2i+LeqcybNju5P5vgwrHYWubfJAZqLfEYX94u1NPODd9Zu+wUVbyJfEcVSoHkXEYxwO7WmOreTXoO5XCCEy3VONgeDi94wc82zyV6X8sj8wGRWD/Shvx8B0cLcJSTqDlUU955S2JuaffY1Lr2I6e2zfAZcQ5oSlBgunwahf86wuVb57HDogjZmcM2ECgYEA5vwPDAt1RbUt8Syso5PfypPaafU/55/QCUz3K496KWm4V3Ezh6oGHpKvbZ62LaCbAVyMBQ5NZ7a46Jtkw10P9CAg1D/pKFK2dqxwKWKCP2v9A4V0na08WkymlUrbbWrHL97AjvY1J59eCzi5liuKjSXHjVqMRBOSD6w02ZLCT5ECgYEAykpwv0KwGorvvBfiEer/NBnGJsxAhhFbJdK49q6a7L+l1Ne3MfsFvUFzvhBHfAXNWbdwWwjPMGT/Y7RFYlD1C8QxVjUTZcCKeV90i6mTOHmFXgVa3UsQkHFBTu6sytdqHw9S2GxHEBDjDVFMlGIZwhmtep1Ob7Fuy+lwq6sDMdsCgYAbo5mhVVWpC679ptzZjf4/XUXLW/9TlfnswvroiXiSsAXQ4MjLuPqWefLn6Q/fkdI6bXqLuFRmzqR9oOqDvgUErzt+ak9Z9dvDg4rASPtQ33kdDMERhQMtwvJD9vsesqI3Bi6AbNGbdiRor1b1sywXC6g/L9CM7NKTcYW5ayg5IQKBgEXQbxzzDQf8D0ThETqR2cXHZ2WYdGRQtR5WnVM1a25trfPJBwaO1ao9Xo6n26Pn9LkT4Ajq/2Z6VNG6M3/85LVM3qIb6zfgvWmqEfTpb0+8UNTkEDnzYCIZlCqDoMrYkV1q0nKy28ulqFa+SimjubQNXJvGkn1lxRFG3YXBnXalAoGBANoLquOrFmzuuK/v7a6ujw6Q1UyH4SgxArUJW7X9Z3Q/lqbgKDFwh/zW54iqPwBT7w2iQebDlWcj+0dXnZmxVnRyzBzqR0JOLRU/o+6Br0yr8JGFJtQc0q8UI8PCyMubTsXasdUiILOYWbLkJPJAvYRXTv21RUCHk7pdXPAQLn1E
+-----END RSA PRIVATE KEY-----';
+$msg = 'alipay_sdk=alipay-sdk-php-20130320&app_id=2018010501603640&biz_content={"out_trade_no":"HW001_xpd000007","scene":"bar_code","auth_code":"12","total_amount":"659","undiscountableAmount":"0.00","subject":"当面付条码支付【HW001_xpd000007】","body":"扫码支付","goods_detail":[{"goods_id":"11111111142701", "goods_name":"毛衫111111111", "quantity":1, "price":659}],"extend_params":{"sys_service_provider_id":"2088311101000830"},"operator_id":"HW001_000","store_id":"noauthority","terminal_id":"HW001","timeout_express":"2m"}&charset=UTF-8&format=json&method=alipay.trade.pay&sign_type=RSA2&timestamp=2018-01-25 12:19:41&version=1.0';
+
+$output = shell_exec("/usr/local/bin/python3 rsa2.py '".$msg."' '".$key."'");
+echo "/usr/local/bin/python3 rsa2.py '".$msg."' '".$key."'";
+print_r($output);
+
